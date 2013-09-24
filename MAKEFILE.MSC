@@ -1,0 +1,63 @@
+#==========================================================
+# Makefile for FAPI EXEs under Microsoft C 6.0
+# Copyright (c) 1993 Douglas Boling
+#==========================================================
+#----------------------------------------------------------
+# Target filename
+#----------------------------------------------------------
+NAME = aedit
+
+#----------------------------------------------------------
+# Define DEBUG = 1 to add debug info to EXE
+#----------------------------------------------------------
+DEBUG = 0
+
+#----------------------------------------------------------
+# C compiler switches
+#
+# -c    Compile, no link
+# -AS   Small Mem model, 64k Code and data
+# -Gs 	No Stack check
+# -Ow   Optimize. Assume no aliases
+# -W3   Print warnings to level 3
+# -Zp   Pack Structures or...
+# -Zpi  If Debug info needed
+#----------------------------------------------------------
+!if $(DEBUG)
+CSWITCH = -c -AS -Gs -Od -W3 -Zpi 
+!else
+CSWITCH = -c -AS -Gs -Ow -W3 -Zp 
+!endif
+
+#----------------------------------------------------------
+# Link Switches
+#
+# /Align:16  Align segments on 16 byte boundries 
+# /CO        If debug info needed
+#----------------------------------------------------------
+!if $(DEBUG)
+LSWITCH = /CO /align:16
+!else
+LSWITCH = /align:16
+!endif
+
+#----------------------------------------------------------
+# Lib files
+#
+# /nod     No defaults
+# slibcp   Small model lib Prot Mode
+# os2      OS/2 API lib
+#----------------------------------------------------------
+LIBS = /nod slibcp os2
+
+#----------------------------------------------------------
+# Make EXE
+#----------------------------------------------------------
+$(NAME).exe : $(NAME).obj $(NAME).h $(NAME).def 
+	link $(LSWITCH) $(NAME), $(NAME).exe, NUL, $(LIBS), $(NAME)
+	bind $(NAME) api.lib os2.lib 
+
+$(NAME).obj : $(NAME).c $(NAME).h 
+	cl $(CSWITCH) $(NAME).c
+
+

@@ -1,0 +1,48 @@
+AEDIT.EXE  (VERSION 1.0)                Copyright (c) 1993 Douglas Boling
+-------------------------------------------------------------------------
+             First Published in PC Magazine November 23, 1993 (Utilities)
+-------------------------------------------------------------------------
+AEDIT by Douglas Boling
+
+Purpose:
+         A small, menu-driven, line-oriented text editor that can be run
+from DOS, OS/2, Windows NT, or a Windows DOS box.  In addition to providing
+basic file, editing, and search-and-replace operations, AEDIT includes Undo
+Last Edit, Set Tabs, and GOTO Line and Column features, and it can handle
+all file sizes that will fit within the system memory.
+
+Format:
+                      AEDIT [/Tn] [/Ln] [/Cn] [[path]filename]
+
+Remarks:
+         The optional switch parameters set the tab spacing (/T) and the
+line (/L) and column (/C) at which the cursor is initially placed.
+The default values of n are 8, 1, and 1, respectively, which provide tab
+stops every eight characters and put the cursor at the start of the file.
+
+         The top-level menu contains File, Edit, Search, Configure, and
+Help menu items, each of which has submenu selections.  Under File are New,
+Open, Save, Save As, and Exit; under Edit are Cut, Copy, Paste, and Undo.
+Text cut or copied to the AEDIT buffer can be pasted repeatedly.  The Undo
+function affects only the last Editing operation.  Search items comprise
+Find, Repeat, Change, and GOTO (line), and Help accesses Help and the usual
+About box.
+
+         To select a menu item, hold down the Alt key while pressing the
+highlighted letter.  Text can be marked for cut, copy, or delete operations
+by holding down the Shift key and moving the cursor.  Many of the functions
+have shortcut keys, which are listed in the Help selection.
+
+         Both Find and Change are affected by the Respect Case flag, which
+can be changed at the Configuration menu.  By default, upper- and lowercase
+are ignored in determining a string match, but this can be toggled to the
+opposite state.  The Tab setting can also be changed from the Configuration
+menu.
+
+         A status bar at the bottom of the screen indicates the filename,
+cursor line and column position, insert (I) or overstrike (O) mode,
+case-sensitive (S) or not (s), and whether CapsLock (Up Arrow) or NumLock
+(#) is active.  Prompts for strings to enter and reminders to save before
+exiting also appear in the status bar.
+-------------------------------------------------------------------------
+DOUGLAS BOLING IS A CONTRIBUTING EDITOR OF PC MAGAZINE.®MDUL¯®MDNM¯

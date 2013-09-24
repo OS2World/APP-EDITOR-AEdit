@@ -1,0 +1,17 @@
+;-------------------------------------------------------------------------
+; AEDIT.DEF module definition file
+;
+; (c) Douglas Boling 1993
+;-------------------------------------------------------------------------
+
+NAME                    AEDIT WINDOWCOMPAT NEWFILES
+
+DESCRIPTION             'FAPI Editor, Copyright 1993, Douglas Boling'
+EXETYPE                 OS2
+
+CODE                    PRELOAD MOVEABLE DISCARDABLE
+DATA                    PRELOAD MOVEABLE DISCARDABLE
+HEAPSIZE                1024
+STACKSIZE               8192
+
+
